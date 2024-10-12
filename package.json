@@ -1,10 +1,15 @@
 {
-  "name": "@adityathummar/shadowclone-ui-rn",
+  "name": "@adityathummar/zustand-x-mmkv",
   "version": "0.0.1",
   "main": "index.ts",
   "license": "MIT",
   "dependencies": {
     "react-native-mmkv": "^3.0.2",
     "zustand": "^5.0.0-rc.2"
+  },
+  "private": false,
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   }
 }
