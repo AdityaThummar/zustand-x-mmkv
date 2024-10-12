@@ -1,5 +1,5 @@
 import { MMKV } from "react-native-mmkv";
-import { create } from "zustand";
+import { create, StateCreator } from "zustand";
 import { createJSONStorage, persist, PersistOptions } from "zustand/middleware";
 
 export type CreatePersistZustandSetterType<T> = (props: T) => void;
@@ -37,4 +37,4 @@ export const createPersistZustand = <T>(
       ) => func(set, get),
       configureStorage(name) as PersistOptions<T>
     )
-  ) as T;
+  ) as StateCreator<T>;
