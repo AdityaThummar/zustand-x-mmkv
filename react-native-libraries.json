@@ -1,0 +1,18 @@
+{
+    "githubUrl": "https://github.com/AdityaThummar/zustand-x-mmkv.git",
+    "npmPkg": "@adityathummar/zustand-x-mmkv",
+    "examples": [],
+    "images": [],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expoGo": false,
+    "windows": false,
+    "macos": false,
+    "tvos": false,
+    "visionos": false,
+    "unmaintained": false,
+    "dev": false,
+    "template": false,
+    "newArchitecture": false
+}
