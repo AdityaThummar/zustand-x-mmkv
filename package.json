@@ -1,6 +1,6 @@
 {
   "name": "@adityathummar/zustand-x-mmkv",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "main": "index.ts",
   "license": "MIT",
   "dependencies": {
