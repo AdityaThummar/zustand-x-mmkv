@@ -2,6 +2,14 @@ import { MMKV } from "react-native-mmkv";
 import { create } from "zustand";
 import { createJSONStorage, persist, PersistOptions } from "zustand/middleware";
 
+export type CreatePersistZustandSetterType<T> = (props: T) => void;
+export type CreatePersistZustandGetterType<T> = () => T;
+
+export type CreatePersistZustandFunctionType<T> = (
+  set: CreatePersistZustandSetterType<T>,
+  get: CreatePersistZustandGetterType<T>
+) => T;
+
 export const configureStorage = (
   id: string = new Date().getTime().toString()
 ) => {
@@ -19,11 +27,14 @@ export const configureStorage = (
 
 export const createPersistZustand = <T>(
   name: string,
-  func: (set: (props: T) => void, get: () => T) => T
+  func: CreatePersistZustandFunctionType<T>
 ) =>
   create(
     persist<T>(
-      (set: (props: T) => void, get: () => T) => func(set, get),
+      (
+        set: CreatePersistZustandSetterType<T>,
+        get: CreatePersistZustandGetterType<T>
+      ) => func(set, get),
       configureStorage(name) as PersistOptions<T>
     )
   );
