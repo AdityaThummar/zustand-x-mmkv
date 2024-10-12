@@ -37,4 +37,4 @@ export const createPersistZustand = <T>(
       ) => func(set, get),
       configureStorage(name) as PersistOptions<T>
     )
-  );
+  ) as T;
