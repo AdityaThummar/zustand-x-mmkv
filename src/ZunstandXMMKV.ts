@@ -17,7 +17,7 @@ export const configureStorage = (
   } as unknown;
 };
 
-export const createPersistZustand = <T extends (arg: any) => any>(
+export const createPersistZustand = <T>(
   name: string,
   func: (set: (props: T) => void, get: () => T) => T
 ) =>
